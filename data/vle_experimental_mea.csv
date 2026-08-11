@@ -1,0 +1,10 @@
+source,mea_wt,T_K,alpha,pco2_kPa,u_pco2_pct,u_alpha_pct,role
+Zhu2022_Fig3,0.20,313.15,0.49,0.1,5,5,primary
+Zhu2022_Fig3,0.20,313.15,0.55,1.0,5,5,primary
+Zhu2022_Fig3,0.20,313.15,0.62,10.0,5,5,primary
+Zhu2022_Fig3,0.20,313.15,0.69,100.0,5,5,primary
+Zhu2022_Fig3,0.20,313.15,0.76,1000.0,5,5,primary
+Aboudheir2003_Fig3,0.153,313.15,0.25,0.05,10,5,cross_check
+Aboudheir2003_Fig3,0.153,313.15,0.40,0.5,10,5,cross_check
+Aboudheir2003_Fig3,0.153,313.15,0.52,5.0,10,5,cross_check
+Aboudheir2003_Fig3,0.153,313.15,0.62,50.0,10,5,cross_check

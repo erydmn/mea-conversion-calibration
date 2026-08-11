@@ -1,0 +1,46 @@
+# === DWSIM flowsheet'inden cikarilan nominal degerler ===
+nominal:
+  flue_gas_molar_flow: 32.27      # mol/s
+  flue_gas_co2_frac: 0.184        # baca gazi CO2 mol kesri (yuksek - not §5)
+  flue_gas_n2_frac: 0.752
+  flue_gas_o2_frac: 0.048
+  flue_gas_h2o_frac: 0.016
+  absorber_T: 313.15              # K
+  absorber_P_Pa: 101325           # Pa
+  reboiler_T: 393.15              # K (HT-1 cikisi)
+  regen_P_Pa: 186325              # Pa
+  mea_wt_frac: 0.20               # KARAR: 20 wt% (Zhu sabitleriyle uyum)
+  mea_conc_molL: 3.285            # 20 wt% MEA = 3.285 mol/L
+  lean_loading: 0.20              # giris yalin yukleme (mol CO2/mol MEA)
+  L_over_G_nominal: 3.41          # Nominal molar L/G orani (n_MEA / n_gas)
+  eta_abs: 0.85                   # absorber yaklasma faktoru
+  eta_reg: 0.90                   # stripper yaklasma faktoru
+  regen_y_co2: 0.393              # sabit stripper P_CO2 (DWSIM rafine eder)
+
+# === Fiziksel ozellikler ===
+physical:
+  Cp_solvent_kJkgK: 3.9           # 20 wt% MEA cozelti isi kapasitesi
+  dH_abs_kJmol: 64.0              # Absorpsiyon entalpisinin mutlak degeri (ekzotermik/endotermik icinde isaretlenir)
+  M_CO2: 44.01
+  M_MEA: 61.08
+  M_H2O: 18.02
+
+# === DWSIM Haritasi ===
+dwsim_map:
+  streams:
+    flue_gas_in: "Flue Gas"
+    clean_gas: "Clean Gas"
+    co2_product: "CO2 Product"
+  units:
+    compressor: "C-1"
+  reactions:
+    absorption: "89f7a6ab-6668-4346-a92c-69bf7a2f0334"
+    desorption: "fee04d69-bd48-4d7b-8ccf-569cd2cc3129"
+
+# === Tarama zarfi (Adim 7) ===
+envelope:
+  L_over_G: [1.0, 4.0]
+  lean_loading: [0.15, 0.30]
+  absorber_T: [308.15, 323.15]
+  reboiler_T: [383.15, 403.15]
+  flue_gas_co2_frac: [0.04, 0.18]
