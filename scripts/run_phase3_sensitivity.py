@@ -31,9 +31,11 @@ def plot_morris(problem, results, title, filename):
               
     for i, name in enumerate(names):
         c = colors[i % len(colors)]
-        ax.scatter(mu_star[i], sigma[i], color=c, s=150, alpha=0.8, edgecolors='white', label=name)
+        x_val = float(mu_star[i])
+        y_val = float(sigma[i])
+        ax.scatter(x_val, y_val, color=c, s=150, alpha=0.8, edgecolors='white', label=name)
         # Metin etiketi
-        ax.annotate(name, (mu_star[i], sigma[i]), xytext=(10, 10), 
+        ax.annotate(name, (x_val, y_val), xytext=(10, 10), 
                     textcoords='offset points', fontsize=12, color='white',
                     bbox=dict(boxstyle="round,pad=0.3", fc="#1A1A24", ec=c, lw=1))
                     
